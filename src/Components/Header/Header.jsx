@@ -20,11 +20,15 @@ const Header = () => {
             placeholder="search"
             className=" ml-1 outline-none p-2 font-semibold text-sm w-[200px] bg-inherit"
           />
-          <SearchOutlinedIcon className="text-gray-400 mr-2" />
+          <IconButton>
+            <SearchOutlinedIcon className="text-gray-400 mr-2" />
+          </IconButton>
         </div>
       </div>
       {/* header right */}
-      <ShoppingCartOutlinedIcon />
+      <IconButton>
+        <ShoppingCartOutlinedIcon />
+      </IconButton>
     </header>
   );
 };
