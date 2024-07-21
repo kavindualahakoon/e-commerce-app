@@ -5,7 +5,7 @@ import { IconButton } from "@mui/material";
 
 const Header = () => {
   return (
-    <header className=" fixed top-0 left-0 z-[100] w-full p-5 bg-my-background flex items-center justify-between drop-shadow-header-shadow">
+    <header className=" fixed top-0 left-0 z-[100] w-full py-5 px-2 bg-my-background flex items-center justify-between drop-shadow-header-shadow">
       {/* header left */}
       <div className="flex items-center ">
         <IconButton>
@@ -34,3 +34,5 @@ const Header = () => {
 };
 
 export default Header;
+
+//01:26:13
