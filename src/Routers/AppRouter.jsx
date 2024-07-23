@@ -51,5 +51,3 @@ const AppRouter = () => {
 };
 
 export default AppRouter;
-
-//02:23:27
