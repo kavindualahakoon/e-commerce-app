@@ -1,9 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
 
 const adsElement = [
   {
@@ -41,7 +40,7 @@ const Ads = () => {
         clickable: true,
       }}
       navigation={true}
-      modules={[Autoplay, Pagination]}
+      modules={[Autoplay]}
       className=" rounded-lg overflow-hidden"
     >
       {adsElement.map(({ imageUrl }, index) => (

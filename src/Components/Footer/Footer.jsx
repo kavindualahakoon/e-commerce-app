@@ -23,11 +23,9 @@ const FooterIcon = ({ Icon, iconText }) => (
       borderRadius: "5px",
     }}
   >
-    <div className=" text-gray-700 hover:text-red-600 transition-all duration-1000">
+    <div className=" text-white  hover:text-black transition-all duration-1000">
       <Icon />
       <p className=" text-xs font-semibold">{iconText}</p>
     </div>
   </IconButton>
 );
-
-//04:16:53
