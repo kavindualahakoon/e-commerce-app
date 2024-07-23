@@ -60,13 +60,22 @@ const Header = () => {
               }
             }}
           >
-            <SearchOutlinedIcon className="text-gray-400 mr-1" />
+            <SearchOutlinedIcon
+              sx={{
+                color:
+                  window.innerWidth < 640
+                    ? isSearch
+                      ? "rgb(156 163 175)"
+                      : "black"
+                    : "rgb(156 163 175)",
+              }}
+            />
           </IconButton>
         </div>
       </div>
       {/* header right */}
       <IconButton>
-        <ShoppingCartOutlinedIcon className=" text-white" />
+        <ShoppingCartOutlinedIcon className="text-white" />
       </IconButton>
     </header>
   );
