@@ -9,16 +9,16 @@ const Header = () => {
       {/* header left */}
       <div className="flex items-center ">
         <IconButton>
-          <MenuIcon className="text-red-600" />
+          <MenuIcon className="text-black" />
         </IconButton>
-        <h1 className=" ml-2 text-sm font-bold">
-          KV <span className=" text-red-600">SHOP</span>
+        <h1 className=" ml-2 text-lg text-white font-bold">
+          Bite <span className=" text-black">Me</span>
         </h1>
         <div className=" overflow-hidden ml-2  flex items-center rounded-full bg-[#fcf7f7]">
           <input
             type="text"
             placeholder="search"
-            className=" ml-1 outline-none p-2 font-semibold text-sm w-[200px] bg-inherit"
+            className=" hidden sm:inline-block ml-1 outline-none p-2 font-semibold text-sm w-[200px] bg-inherit"
           />
           <IconButton>
             <SearchOutlinedIcon className="text-gray-400 mr-2" />

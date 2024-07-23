@@ -4,7 +4,7 @@ import Footer from "../Components/Footer/Footer";
 
 const MainLayout = () => {
   return (
-    <div className="w-full h-screen">
+    <div className=" overflow-hidden w-screen h-screen">
       <Header />
       <Outlet />
 
