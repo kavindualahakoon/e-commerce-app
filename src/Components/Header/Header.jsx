@@ -29,7 +29,17 @@ const Header = () => {
           Bite <span className=" text-black">Me</span>
         </h1>
 
-        <div className=" overflow-hidden ml-2 flex items-center rounded-full bg-[#fcf7f7]">
+        <div
+          style={{
+            backgroundColor:
+              window.innerWidth < 640
+                ? isSearch
+                  ? "#fcf7f7"
+                  : "inherit"
+                : "#fcf7f7",
+          }}
+          className=" overflow-hidden ml-2 flex items-center rounded-full"
+        >
           <input
             type="text"
             placeholder="search"
