@@ -76,9 +76,9 @@ const Header = () => {
       </div>
       {/* header right */}
       <IconButton>
-        <div className="text-white relative rounded-full p-1">
-          <ShoppingCartOutlinedIcon />
-          <div className=" absolute top-0 right-0 text-[7px] p-[2px] m-0 bg-black rounded-full">
+        <div className=" relative  p-1">
+          <ShoppingCartOutlinedIcon className=" text-black" />
+          <div className=" absolute top-[2px] right-0 text-[7px] font-semibold text-white  bg-black flex items-center justify-center w-3 h-3 rounded-full  ">
             2
           </div>
         </div>
@@ -88,3 +88,4 @@ const Header = () => {
 };
 
 export default Header;
+//06:47:47

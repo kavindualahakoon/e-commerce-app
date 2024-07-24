@@ -1,0 +1,25 @@
+.bite_loading_dots {
+  width: 56px;
+  height: 13.4px;
+  background: radial-gradient(
+      circle closest-side at left 6.7px top 50%,
+      #e65f41 90%,
+      #0000
+    ),
+    radial-gradient(circle closest-side, #e65f41 90%, #0000),
+    radial-gradient(
+      circle closest-side at right 6.7px top 50%,
+      #e65f41 90%,
+      #0000
+    );
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  animation: bite_loading_dots-xm0185md 1.2s infinite alternate;
+}
+
+@keyframes bite_loading_dots-xm0185md {
+  to {
+    width: 22.4px;
+    height: 26.9px;
+  }
+}

@@ -3,6 +3,7 @@ import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import { IconButton } from "@mui/material";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const [whoIsClick, setWhoIsClick] = useState({
@@ -53,23 +54,29 @@ const FooterIcon = ({ Icon, iconText, clickFun }) => {
   };
 
   return (
-    <IconButton
-      sx={{
-        padding: "4px",
-        paddingTop: "0",
-        borderRadius: "5px",
-      }}
-      onClick={clickHandle}
+    <Link
+      to={
+        iconText === "Home" ? "/" : `/${String(iconText).toLocaleLowerCase()}`
+      }
     >
-      <div
-        style={{
-          color: clickFun.whoIsClick[iconText] && "black",
+      <IconButton
+        sx={{
+          padding: "4px",
+          paddingTop: "0",
+          borderRadius: "5px",
         }}
-        className=" text-white hover:text-gray-800 transition-all duration-300 "
+        onClick={clickHandle}
       >
-        <Icon />
-        <p className=" text-xs font-semibold ">{iconText}</p>
-      </div>
-    </IconButton>
+        <div
+          style={{
+            color: clickFun.whoIsClick[iconText] && "black",
+          }}
+          className=" text-white hover:text-gray-800 transition-all duration-300 "
+        >
+          <Icon />
+          <p className=" text-xs font-semibold ">{iconText}</p>
+        </div>
+      </IconButton>
+    </Link>
   );
 };
