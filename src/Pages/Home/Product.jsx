@@ -4,7 +4,7 @@ import { Grid, Mousewheel, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/pagination";
-import { IconButton } from "@mui/material";
+import { IconButton, Rating } from "@mui/material";
 import "./style.css";
 
 const productArr = [
@@ -12,67 +12,72 @@ const productArr = [
     imageUrl:
       "https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?cs=srgb&dl=pexels-pixabay-260922.jpg&fm=jpg",
     price: "100",
-    productTitle: "product title 1",
+    productTitle: "product title 01",
   },
   {
     imageUrl:
       "https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?cs=srgb&dl=pexels-pixabay-260922.jpg&fm=jpg",
     price: "100",
-    productTitle: "product title 2",
+    productTitle: "product title 02",
   },
   {
     imageUrl:
       "https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?cs=srgb&dl=pexels-pixabay-260922.jpg&fm=jpg",
     price: "100",
-    productTitle: "product title 3",
+    productTitle: "product title 03",
   },
   {
     imageUrl:
       "https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?cs=srgb&dl=pexels-pixabay-260922.jpg&fm=jpg",
     price: "100",
-    productTitle: "product title 4",
+    productTitle: "product title 04",
   },
   {
     imageUrl:
       "https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?cs=srgb&dl=pexels-pixabay-260922.jpg&fm=jpg",
     price: "100",
-    productTitle: "product title 5",
+    productTitle: "product title 05",
   },
   {
     imageUrl:
       "https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?cs=srgb&dl=pexels-pixabay-260922.jpg&fm=jpg",
     price: "100",
-    productTitle: "product title 6",
+    productTitle: "product title 06",
   },
   {
     imageUrl:
       "https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?cs=srgb&dl=pexels-pixabay-260922.jpg&fm=jpg",
     price: "100",
-    productTitle: "product title 7",
+    productTitle: "product title 07",
   },
   {
     imageUrl:
       "https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?cs=srgb&dl=pexels-pixabay-260922.jpg&fm=jpg",
     price: "100",
-    productTitle: "product title 8",
+    productTitle: "product title 08",
   },
   {
     imageUrl:
       "https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?cs=srgb&dl=pexels-pixabay-260922.jpg&fm=jpg",
     price: "100",
-    productTitle: "product title 9",
+    productTitle: "product title 09",
   },
 ];
 const Product = ({ title, rowsCount, slidesPerView }) => {
   return (
-    <section className=" w-full mt-6">
-      <h1 className=" text-lg font-bold mb-3">{title}</h1>
+    <section
+      style={{
+        boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+      }}
+      className=" w-full mt-6  p-2"
+    >
+      <h1 className=" text-lg font-bold mb-3 ml-2 mt-2 ">{title}</h1>
       <Swiper
-        slidesPerView={Number(slidesPerView)}
+        slidesPerView={3}
         grid={{
-          rows: Number(rowsCount),
+          rows: 1,
         }}
-        spaceBetween={2}
+        spaceBetween={30}
         pagination={{
           clickable: true,
         }}
@@ -112,7 +117,14 @@ const ProductUnit = ({ imageUrl, price, productTitle, id }) => (
         className="w-full object-contain "
       />
       <h3 className=" text-sm font-semibold text-stone-900">{productTitle}</h3>
-      <h3 className=" text-lg font-bold text-stone-900">Rs.{price}.00/-</h3>
+      <Rating
+        name={imageUrl}
+        value={3.5}
+        precision={0.1}
+        size="small"
+        readOnly
+      />
+      <h3 className=" text-lg font-bold text-stone-900">Rs.{price}/-</h3>
     </div>
   </IconButton>
 );

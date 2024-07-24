@@ -8,7 +8,7 @@ const Header = () => {
   console.log("Header Re-rendering");
   const [isSearch, setIsSearch] = useState(false);
   return (
-    <header className=" fixed top-0 left-0 z-[100] w-full py-5 px-2 bg-my-background flex items-center justify-between drop-shadow-header-shadow">
+    <header className=" fixed top-0 left-0 z-[100] w-full py-3 px-2 bg-my-background flex items-center justify-between drop-shadow-header-shadow">
       {/* header left */}
       <div className="flex items-center ">
         <IconButton>
@@ -50,6 +50,7 @@ const Header = () => {
                     ? "inline-block"
                     : "none"
                   : "inline-block",
+              transition: "all 400ms ease-in-out",
             }}
             className=" ml-1 outline-none p-2 font-semibold text-sm w-[200px] bg-inherit"
           />
@@ -75,7 +76,12 @@ const Header = () => {
       </div>
       {/* header right */}
       <IconButton>
-        <ShoppingCartOutlinedIcon className="text-white" />
+        <div className="text-white relative rounded-full p-1">
+          <ShoppingCartOutlinedIcon />
+          <div className=" absolute top-0 right-0 text-[7px] p-[2px] m-0 bg-black rounded-full">
+            2
+          </div>
+        </div>
       </IconButton>
     </header>
   );
