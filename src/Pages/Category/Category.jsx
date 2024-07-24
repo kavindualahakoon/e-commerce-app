@@ -70,5 +70,3 @@ const CategoryItems = ({ imageUrl, title }) => (
     </div>
   </IconButton>
 );
-
-//08:02:54
