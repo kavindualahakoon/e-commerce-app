@@ -78,6 +78,7 @@ const Header = () => {
           <IconButton
             onClick={() => {
               if (window.innerWidth < 640) {
+                clicked = !clicked;
                 searchButtonClickHandle();
               }
             }}
