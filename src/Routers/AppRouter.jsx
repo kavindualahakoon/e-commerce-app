@@ -6,6 +6,7 @@ import Login from "../Pages/Login/Login";
 import UserProtected from "./UserProtected";
 import Category from "../Pages/Category/Category";
 import CategoryItems from "../Pages/CategoryItems/CategoryItems";
+import IteamPage from "../Pages/IteamPage/IteamPage";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,16 @@ const router = createBrowserRouter([
           },
           {
             path: ":categoryId",
-            element: <CategoryItems />,
+            children: [
+              {
+                index: true,
+                element: <CategoryItems />,
+              },
+              {
+                path: ":iteam",
+                element: <IteamPage />,
+              },
+            ],
           },
         ],
       },

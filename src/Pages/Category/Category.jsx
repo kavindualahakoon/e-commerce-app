@@ -52,7 +52,7 @@ const Category = () => {
         <h1 className=" text-lg font-bold mb-3 ml-2 mt-2 ">Main Categories</h1>
         <div className="grid grid-cols-3 grid-rows-[auto] gap-5">
           {categoryArr.map(({ imageUrl, title, categoryId }, index) => (
-            <CategoryItems
+            <CategoryUnitItems
               key={index}
               imageUrl={imageUrl}
               title={title}
@@ -66,7 +66,7 @@ const Category = () => {
 };
 
 export default Category;
-const CategoryItems = ({ imageUrl, title, categoryId }) => (
+const CategoryUnitItems = ({ imageUrl, title, categoryId }) => (
   <Link to={`/category/${categoryId}`}>
     <IconButton sx={{ color: "gray", padding: "1px", borderRadius: "6px" }}>
       <div

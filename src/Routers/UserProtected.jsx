@@ -6,5 +6,3 @@ const UserProtected = () => {
 };
 
 export default UserProtected;
-
-//02:11:29
