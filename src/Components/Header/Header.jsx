@@ -8,7 +8,7 @@ const Header = () => {
   console.log("Header Re-rendering");
   const [isSearch, setIsSearch] = useState(false);
   return (
-    <header className=" fixed top-0 left-0 z-[100] w-full py-3 px-2 bg-my-background flex items-center justify-between drop-shadow-header-shadow">
+    <header className=" fixed top-0 left-0 z-[100] w-full p-2 bg-my-background flex items-center justify-between drop-shadow-header-shadow">
       {/* header left */}
       <div className="flex items-center ">
         <IconButton>
@@ -88,4 +88,3 @@ const Header = () => {
 };
 
 export default Header;
-//06:47:47
