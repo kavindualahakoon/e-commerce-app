@@ -2,11 +2,29 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { IconButton } from "@mui/material";
-import { useState } from "react";
+import { useRef } from "react";
+
+let clicked = false;
 
 const Header = () => {
   console.log("Header Re-rendering");
-  const [isSearch, setIsSearch] = useState(false);
+
+  const logoRef = useRef();
+  const searchBoxRef = useRef();
+  const searchBoxContainerRef = useRef();
+
+  const searchButtonClickHandle = () => {
+    if (clicked) {
+      logoRef.current.style = "display:none;";
+      searchBoxRef.current.style = "display:inline-block;";
+      searchBoxContainerRef.current.style.backgroundColor = "#fcf7f7";
+    } else {
+      logoRef.current.style = "display:inline-block;";
+      searchBoxRef.current.style = "display:none;";
+      searchBoxContainerRef.current.style.backgroundColor = "#inherit";
+    }
+  };
+
   return (
     <header className=" fixed top-0 left-0 z-[100] w-full p-2 bg-my-background flex items-center justify-between drop-shadow-header-shadow">
       {/* header left */}
@@ -16,10 +34,11 @@ const Header = () => {
         </IconButton>
 
         <h1
+          ref={logoRef}
           style={{
             display:
               window.innerWidth < 640
-                ? isSearch
+                ? clicked
                   ? "none"
                   : "inline-block"
                 : "inline-block",
@@ -30,10 +49,11 @@ const Header = () => {
         </h1>
 
         <div
+          ref={searchBoxContainerRef}
           style={{
             backgroundColor:
               window.innerWidth < 640
-                ? isSearch
+                ? clicked
                   ? "#fcf7f7"
                   : "inherit"
                 : "#fcf7f7",
@@ -41,12 +61,13 @@ const Header = () => {
           className=" overflow-hidden ml-2 flex items-center rounded-full"
         >
           <input
+            ref={searchBoxRef}
             type="text"
             placeholder="search"
             style={{
               display:
                 window.innerWidth < 640
-                  ? isSearch
+                  ? clicked
                     ? "inline-block"
                     : "none"
                   : "inline-block",
@@ -57,7 +78,7 @@ const Header = () => {
           <IconButton
             onClick={() => {
               if (window.innerWidth < 640) {
-                setIsSearch(!isSearch);
+                searchButtonClickHandle();
               }
             }}
           >
@@ -65,7 +86,7 @@ const Header = () => {
               sx={{
                 color:
                   window.innerWidth < 640
-                    ? isSearch
+                    ? clicked
                       ? "rgb(156 163 175)"
                       : "black"
                     : "rgb(156 163 175)",
