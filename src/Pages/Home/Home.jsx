@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Loading from "../../Components/Loading/Loading";
 import Ads from "./Ads";
-import ElecProcuts from "./ElecProcuts";
 import Product from "./Product";
 
 const Home = () => {
