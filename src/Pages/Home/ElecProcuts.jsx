@@ -102,29 +102,24 @@ const ElecProcuts = ({ title, rowsCount, slidesPerView }) => {
 export default ElecProcuts;
 
 const ProductUnit = ({ imageUrl, price, productTitle, id }) => (
-  <IconButton
-    sx={{
-      padding: "4px",
-      borderRadius: "5px",
-      margin: "3px",
-      marginBottom: "30px",
-    }}
-  >
-    <div className=" w-full ">
-      <img
-        src={imageUrl}
-        alt={`product_unit_${id}`}
-        className="w-full object-contain "
-      />
-      <h3 className=" text-sm font-semibold text-stone-900">{productTitle}</h3>
-      <Rating
-        name={imageUrl}
-        value={3.5}
-        precision={0.1}
-        size="small"
-        readOnly
-      />
-      <h3 className=" text-lg font-bold text-stone-900">Rs.{price}/-</h3>
-    </div>
-  </IconButton>
+  // <IconButton
+  //   sx={{
+  //     padding: "4px",
+  //     borderRadius: "5px",
+  //     margin: "3px",
+  //     marginBottom: "30px",
+  //   }}
+  // >
+  <div className=" w-full relative ">
+    <img
+      src={imageUrl}
+      alt={`product_unit_${id}`}
+      className="w-full object-contain "
+    />
+    <h3 className=" text-sm font-semibold text-stone-900">{productTitle}</h3>
+    <Rating name={imageUrl} value={3.5} precision={0.1} size="small" readOnly />
+    <h3 className=" text-lg font-bold text-stone-900">Rs.{price}/-</h3>
+    <div className=" absolute top-0 left-0 w-full h-full bg-slate-400 "></div>
+  </div>
+  // </IconButton>
 );
